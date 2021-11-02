@@ -1,0 +1,106 @@
+body {
+    background-color: rgb(23, 23, 26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(23, 23, 26);
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0px 0px 70px 40px rgb(11, 233, 196),
+    0px 0px 30px 30px rgb(255, 255, 255);;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 255, 255);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+.date {
+    width: 45px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 0;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.6);
+}
+
+.number {
+    --rotation: 0;
+    font-size: 3.3rem;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    text-shadow: 0px 2px 4px rgb(0, 0, 0);
+}
+
+.number1 {--rotation: 30;}
+.number2 {--rotation: 60;}
+.number3 {--rotation: 90;}
+.number4 {--rotation: 120;}
+.number5 {--rotation: 150;}
+.number6 {--rotation: 180;}
+.number7 {--rotation: 210;}
+.number8 {--rotation: 240;}
+.number9 {--rotation: 270;}
+.number10 {--rotation: 300;}
+.number11 {--rotation: 330;}
+.number12 {--rotation: 360;}
+
+.hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    border-radius: 10px 10px 0 0;
+}
+
+.second {
+    --rotation: 0;
+    width: 3px;
+    height: 40%;
+    background-color: red;
+    z-index: 3;
+}
+
+.minute {
+    --rotation: 0;
+    width: 5px;
+    height: 32%;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+}
+
+.hour {
+    --rotation: 0;
+    width: 10px;
+    height: 25%;
+    background-color: rgb(255, 0, 119);
+    z-index: 1;
+}
